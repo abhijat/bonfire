@@ -51,7 +51,7 @@ fn field_kind_from_assignment(targets: &Vec<Expression>, value: &Expression) -> 
 
 pub fn is_value_call(e: &Expression) -> Option<String> {
     match &e.node {
-        ExpressionType::Call { function, args, keywords } => {
+        ExpressionType::Call { function, args: _, keywords: _ } => {
             attribute_matches(function, "fields", None)
         }
         _ => None,

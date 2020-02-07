@@ -9,13 +9,13 @@ Point it to a file containing marshmallow schema definitions. It will print out 
 ```shell script
 ~/dev/rust/bonfire  (master) 
  abhijat $ ./target/debug/bonfire ./data/schemas.py 
-{"name":"foo-schema","properties":[{"type":{"type":"string"}},{"key":{"type":"string"}},{"value":{"type":"string"}}]}
-{"name":"bar-schema","properties":[{"type":{"type":"string"}},{"session_key":{"type":"string"}},{"url":{"type":"string"}},{"method":{"type":"string"}},{"parameters":{"type":"array"}}]}
-{"name":"abc-def-schema","properties":[{"st":{"type":"string"}},{"d":{"type":"object"}},{"user_id":{"type":"int"}},{"request":{"type":"nested"}},{"tenant_id":{"type":"tenantid"}}]}
-{"name":"some-important-stuff","properties":[{"sc":{"type":"int"}},{"rtt":{"type":"string"}},{"rdd":{"type":"string"}}]}
-{"name":"mega-important-schema","properties":[{"fn":{"type":"string"}},{"afarg":{"type":"object"}},{"file":{"type":"string"}},{"lno":{"type":"int"}},{"turtles":{"type":"string"}}]}
-{"name":"some-big-events-schema","properties":[{"family":{"type":"string"}},{"neighborhood":{"type":"string"}},{"pincode":{"type":"string"}}]}
-{"name":"event-schema","properties":[{"timestamp":{"type":"datetime"}},{"bus_size":{"type":"string"}},{"data":{"type":"object"}},{"addresses":{"type":"nested"}}]}
+{"name":"foo-schema","properties":{"key":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}}
+{"name":"bar-schema","properties":{"method":{"type":"string"},"parameters":{"type":"array"},"session_key":{"type":"string"},"type":{"type":"string"},"url":{"type":"string"}}}
+{"name":"abc-def-schema","properties":{"d":{"type":"object"},"request":{"type":"nested"},"st":{"type":"string"},"tenant_id":{"type":"tenantid"},"user_id":{"type":"int"}}}
+{"name":"some-important-stuff","properties":{"rdd":{"type":"string"},"rtt":{"type":"string"},"sc":{"type":"int"}}}
+{"name":"mega-important-schema","properties":{"afarg":{"type":"object"},"file":{"type":"string"},"fn":{"type":"string"},"lno":{"type":"int"},"turtles":{"type":"string"}}}
+{"name":"some-big-events-schema","properties":{"family":{"type":"string"},"neighborhood":{"type":"string"},"pincode":{"type":"string"}}}
+{"name":"event-schema","properties":{"addresses":{"type":"nested"},"bus_size":{"type":"string"},"data":{"type":"object"},"timestamp":{"type":"datetime"}}}
 ``` 
 
 #### What it does not do (yet)

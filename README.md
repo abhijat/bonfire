@@ -32,3 +32,25 @@ The wrapping JSON objects also have to be created by hand. All of the above _can
 #### How it works
 
 It uses the python parser created by the [RustPython](https://github.com/RustPython/RustPython) project to parse the AST and uses it to produce JSON schema.
+
+
+#### Help
+
+```shell script
+~/dev/rust/bonfire  (master) 
+ abhijat $ ./target/debug/bonfire --help
+schema-translator 0.1.0
+A small utility to convert marshmallow schema to json-schema
+
+USAGE:
+    bonfire [FLAGS] <roast>
+
+FLAGS:
+    -h, --help        Prints help information
+    -p, --prettify    
+    -V, --version     Prints version information
+
+ARGS:
+    <roast>    
+
+```

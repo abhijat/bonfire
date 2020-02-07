@@ -1,0 +1,11 @@
+[package]
+name = "schema-translator"
+version = "0.1.0"
+authors = ["Abhijat Malviya <abhijat@ridecell.com>"]
+edition = "2018"
+
+[dependencies]
+rustpython-parser = "0.1.1"
+serde = "1.0"
+serde_json = "1.0"
+structopt = "0.3.9"

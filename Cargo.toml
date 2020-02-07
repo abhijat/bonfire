@@ -1,5 +1,5 @@
 [package]
-name = "schema-translator"
+name = "bonfire"
 version = "0.1.0"
 authors = ["Abhijat Malviya <abhijat@ridecell.com>"]
 edition = "2018"

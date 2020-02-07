@@ -15,7 +15,7 @@ mod statement_filters;
 
 fn main() {
     let options = Opt::from_args();
-    let expression = read_to_string(options.input_file).unwrap();
+    let expression = read_to_string(options.roast).unwrap();
     let parsed = parse_program(expression.as_str()).unwrap();
     let schemas: Vec<ClassDefinition> = parsed
         .statements
@@ -34,5 +34,5 @@ fn main() {
 #[structopt(name = "schema-translator", about = "A small utility to convert marshmallow schema to json-schema")]
 struct Opt {
     #[structopt(parse(from_os_str))]
-    input_file: PathBuf,
+    roast: PathBuf,
 }

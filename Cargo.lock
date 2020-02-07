@@ -102,6 +102,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "bonfire"
+version = "0.1.0"
+dependencies = [
+ "rustpython-parser",
+ "serde",
+ "serde_json",
+ "structopt",
+]
+
+[[package]]
 name = "byte-tools"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -628,16 +638,6 @@ name = "ryu"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bfa8506c1de11c9c4e4c38863ccbe02a305c8188e85a05a784c9e11e1c3910c8"
-
-[[package]]
-name = "schema-translator"
-version = "0.1.0"
-dependencies = [
- "rustpython-parser",
- "serde",
- "serde_json",
- "structopt",
-]
 
 [[package]]
 name = "serde"

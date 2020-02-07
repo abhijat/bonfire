@@ -2,6 +2,7 @@ use rustpython_parser::ast::{Expression, ExpressionType, Statement, StatementTyp
 use serde_json::Value;
 use crate::statement_filters::is_assignment;
 use crate::utils::snakeify;
+use std::collections::HashMap;
 
 pub struct ClassDefinition<'a> {
     pub name: String,
@@ -14,11 +15,11 @@ impl<'a> ClassDefinition<'a> {
     }
 
     pub fn to_json(&self) -> Value {
-        let properties: Vec<Value> = self
+        let properties: HashMap<String, Value> = self
             .body
             .iter()
             .flat_map(|s| is_assignment(s))
-            .map(|s| s.to_json())
+            .map(|s| (s.name.clone(), s.to_json()))
             .collect();
         
         json!({

@@ -14,11 +14,7 @@ impl FieldKind {
     }
 
     pub fn to_json(&self) -> serde_json::Value {
-        json!({
-            self.name.clone(): {
-                "type": self.kind.clone().to_ascii_lowercase()
-            }
-        })
+        json!({"type": self.kind.clone().to_ascii_lowercase()})
     }
 
     fn remap_kind(input: &str) -> String {

@@ -15,7 +15,7 @@ mod statement_filters;
 
 fn main() {
     let options = Opt::from_args();
-    let expression = read_to_string(options.roast).unwrap();
+    let expression = read_to_string(&options.roast).unwrap();
     let parsed = parse_program(expression.as_str()).unwrap();
     let schemas: Vec<ClassDefinition> = parsed
         .statements
@@ -26,7 +26,13 @@ fn main() {
     schemas
         .iter()
         .map(ClassDefinition::to_json)
-        .for_each(|v| eprintln!("{}", serde_json::to_string(&v).unwrap()));
+        .for_each(|v| {
+            if options.prettify {
+                eprintln!("{}", serde_json::to_string_pretty(&v).unwrap())
+            } else {
+                eprintln!("{}", serde_json::to_string(&v).unwrap())
+            }
+        });
 }
 
 
@@ -35,4 +41,7 @@ fn main() {
 struct Opt {
     #[structopt(parse(from_os_str))]
     roast: PathBuf,
+
+    #[structopt(short, long)]
+    prettify: bool,
 }

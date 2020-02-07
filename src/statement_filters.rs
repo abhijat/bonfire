@@ -4,8 +4,8 @@ use crate::schema_filters::attribute_matches;
 
 #[derive(Debug)]
 pub struct FieldKind {
-    name: String,
-    kind: String,
+    pub name: String,
+    pub kind: String,
 }
 
 impl FieldKind {

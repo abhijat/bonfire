@@ -41,7 +41,7 @@ pub fn schema_class_definitions(s: &Statement) -> Option<ClassDefinition> {
                 .iter()
                 .fold(false, |acc, expr| acc || attribute_matches(expr, "marshmallow", Some("Schema")).is_some());
             if is_schema_def {
-                Some(ClassDefinition { name: name.to_owned(), body })
+                Some(ClassDefinition::new(name.as_str(), body))
             } else {
                 None
             }
